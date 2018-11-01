@@ -1,15 +1,9 @@
-
 drop table if exists produced_indicator;
 drop table if exists test_procedure;
 drop table if exists radiography;
 drop table if exists performed;
-
-
-drop table if exists proceduree;
-
-
+drop table if exists procedures;
 drop table if exists indicator;
-
 drop table if exists prescription;
 drop table if exists medication;
 drop table if exists consult_diagnosis;
@@ -24,7 +18,6 @@ drop table if exists veterinary;
 drop table if exists client;
 drop table if exists phone_number;
 drop table if exists person;
-
 
 create table person
 	(VAT integer,
@@ -112,7 +105,6 @@ create table diagnosis_code
 	 name varchar(255),
 	 primary key(code));
 
-
 create table consult_diagnosis
 	(code varchar(255),
 	 name varchar(255),
@@ -122,14 +114,11 @@ create table consult_diagnosis
 	 foreign key(name, VAT_owner, date_timestamp) references consult(name, VAT_owner, date_timestamp),
 	 foreign key(code) references diagnosis_code(code));
 
-
 create table medication
 	(name varchar(255),
 	 lab varchar(255),
 	 dosage varchar(255),
 	 primary key(name, lab, dosage));
-
-
 
 create table prescription
 	(code varchar(255),
@@ -144,8 +133,6 @@ create table prescription
 	 foreign key(code, name, VAT_owner, date_timestamp) references consult_diagnosis(code, name, VAT_owner, date_timestamp),
 	 foreign key(name_med, lab, dosage) references medication(name, lab, dosage));
 
-
-
 create table indicator
 	(name varchar(255),
 	 reference_value numeric(20,2),
@@ -153,9 +140,7 @@ create table indicator
 	 description varchar(255),
 	 primary key(name));
 
-
-
-create table proceduree
+create table procedures
 	(name varchar(255),
 	 VAT_owner integer,
 	 date_timestamp timestamp,
@@ -164,8 +149,6 @@ create table proceduree
 	 primary key(name, VAT_owner, date_timestamp, num),
 	 foreign key(name, VAT_owner, date_timestamp) references consult(name, VAT_owner, date_timestamp));
 
-
-
 create table performed
 	(name varchar(255),
 	 VAT_owner integer,
@@ -173,7 +156,7 @@ create table performed
 	 num integer,
 	 VAT_assistant integer,
 	 primary key(name, VAT_owner, date_timestamp, num),
-	 foreign key(name, VAT_owner, date_timestamp, num) references proceduree(name, VAT_owner, date_timestamp, num),
+	 foreign key(name, VAT_owner, date_timestamp, num) references procedures(name, VAT_owner, date_timestamp, num),
 	 foreign key(VAT_assistant) references assistant(VAT));
 
 create table radiography
@@ -183,7 +166,7 @@ create table radiography
 	 num integer,
 	 file varchar(255),
 	 primary key(name, VAT_owner, date_timestamp, num),
-	 foreign key(name, VAT_owner, date_timestamp, num) references proceduree(name, VAT_owner, date_timestamp, num));
+	 foreign key(name, VAT_owner, date_timestamp, num) references procedures(name, VAT_owner, date_timestamp, num));
 
 create table test_procedure
 	(name varchar(255),
@@ -192,7 +175,7 @@ create table test_procedure
 	 num integer,
 	 type char(5),
 	 primary key(name, VAT_owner, date_timestamp, num),
-	 foreign key(name, VAT_owner, date_timestamp, num) references proceduree(name, VAT_owner, date_timestamp, num),
+	 foreign key(name, VAT_owner, date_timestamp, num) references procedures(name, VAT_owner, date_timestamp, num),
 	 check(num >= 1));
 
 create table produced_indicator
