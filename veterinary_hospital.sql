@@ -188,3 +188,71 @@ create table produced_indicator
 	 primary key(name, VAT_owner, date_timestamp, num, indicator_name),
 	 foreign key(name, VAT_owner, date_timestamp, num) references test_procedure(name, VAT_owner, date_timestamp, num),
 	 foreign key(indicator_name) references indicator(name));
+
+insert into person values (123456001, 'Frank', 'Dark Boulevard', 'Chicago','1111-123');
+insert into person values (123456002, 'Charles', 'Arsenal Street', 'London','1100-123');
+insert into person values (123456003, 'James', 'Flowers Avenue','San Francisco','3300-123');
+insert into person values (123456011, 'Andrew', 'Roses Boulevard', 'Chicago','1111-123');
+insert into person values (123456022, 'Peter', 'Central Boulevard', 'London','1100-123');
+insert into person values (123456033, 'Ray', 'Second Boulevard','San Francisco','3300-123');
+insert into person values (123456004, 'John Smith', 'Central Avenue','Seattle','2200-123');
+insert into person values (123456005, 'Jennifer', 'White Avenue','Chicago','1111-124');
+insert into person values (123456006, 'Jessica',  'Chelsea Street','London','1100-124');
+insert into person values (123456007, 'Caroline', 'Central Street','Seattle','2200-124');
+insert into person values (123456008, 'Bernard',  'Central Street','Seattle','2200-125');
+insert into person values (123456009, 'Anne',  'Happy Boulevard','Chicago','1111-125');
+
+insert into phone_number values (123456001, 961231231);
+insert into phone_number values (123456002, 961231232);
+insert into phone_number values (123456003, 961231233);
+insert into phone_number values (123456011, 960000001);
+insert into phone_number values (123456022, 960000002);
+insert into phone_number values (123456033, 960000003);
+insert into phone_number values (123456004, 961111114);
+insert into phone_number values (123456005, 961111115);
+insert into phone_number values (123456006, 961111116);
+insert into phone_number values (123456007, 962222227);
+insert into phone_number values (123456008, 962222228);
+insert into phone_number values (123456009, 962222229);
+
+insert into client values (123456001);
+insert into client values (123456002);
+insert into client values (123456003);
+insert into client values (123456011);
+insert into client values (123456022);
+insert into client values (123456033);
+
+insert into veterinary values (123456004,'Oncologist','John Smith is a 30 year old specialist in Oncology.'); 
+insert into veterinary values (123456005,'Nutrition','Jennifer is a 34 year old specialist in Nutrition.');
+insert into veterinary values (123456006,'Orthopedics','Jessica is a 26 year old specialist in Orthopedics.');
+
+insert into assistant values (123456007); 
+insert into assistant values (123456008);
+insert into assistant values (123456009);
+
+insert into species values ('dog','abc');
+insert into species values ('bird','abc');
+insert into species values ('cat','abc');
+
+insert into animal values ('Striker',123456001,'dog','brown','male','2008-11-05',10);
+insert into animal values ('Jackson',123456002,'dog','black','female','2009-12-30',9);
+insert into animal values ('Bob',123456003,'cat','white','male','2018-01-04',1);
+insert into animal values ('Thunder',123456001,'dog','brown','female','2016-04-02',2);
+insert into animal values ('Sparky',123456002,'cat','black','female','2014-10-10',4);
+insert into animal values ('Max',123456003,'dog','yellow','male','2007-10-15',11);
+insert into animal values ('Cookie',123456011,'bird','red','male','2005-10-13',13);
+insert into animal values ('Rolls',123456022,'bird','blue','male','2018-05-01',1);
+insert into animal values ('Jim',123456033,'bird','green','female','2010-02-05',8);
+insert into animal values ('Cooper',123456011,'bird','yellow','female','2016-04-05',2);
+
+insert into consult values ('Striker',123456001,'2009-01-01','Nausea, fever and a black mark on the neck., Cancer','Black Mark.','Chemotherapy', 'No sun light.',123456001,123456004,35);
+insert into consult values ('Jackson',123456002,'2009-01-01','Nausea, fever and a black mark on the neck., Cancer','Black Mark.','Chemotherapy', 'No sun light.',123456002,123456004,20);
+insert into consult values ('Bob',123456003,'2009-01-01','Nausea, fever and a black mark on the neck. Cancer','Black Mark.','Chemotherapy', 'No sun light.',123456003,123456004,32);
+insert into consult values ('Thunder',123456001,'2009-01-01','Overweight.', 'Obesity', 'Blood and urine tests.','Lower caloric consumption and take pills.',123456001,123456005,17);
+insert into consult values ('Sparky',123456002,'2009-01-01','Overweight.', 'Obese', 'Blood and urine tests.','Lower caloric consumption and take pills.',123456002,123456005,15);
+insert into consult values ('Max',123456003,'2009-01-01','Overweight.', 'Obesity', 'Blood and urine tests.','Lower caloric consumption and take pills.',123456003,123456005,10);
+insert into consult values ('Cookie',123456011,'2009-01-01','Nausea, fever. Cold','Blood analysis.','No exercise.', 'Stay warm.',123456011,123456006,1.38);
+insert into consult values ('Rolls',123456022,'2009-01-01','Nausea, fever. Cold','Blood analysis.','No exercise.', 'Stay warm.',123456022,123456006,1.11);
+insert into consult values ('Jim',123456033,'2009-01-01','Nausea. Cold','Blood analysis.','No exercise.', 'Stay warm.',123456033,123456006,1.42);
+insert into consult values ('Cooper',123456011,'2009-01-01','Nausea, fever. Cold','Blood analysis.','No exercise.', 'Stay warm.',123456011,123456006,1.52);
+
