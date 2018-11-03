@@ -296,7 +296,6 @@ insert into consult_diagnosis values ('AAHA-08','Rolls',123456022,'2018-08-01');
 insert into consult_diagnosis values ('AAHA-09','Jim',123456033,'2018-09-01');
 insert into consult_diagnosis values ('AAHA-10','Cooper',123456011,'2018-10-01');
 
-/* As dosages têm 1 de diferença porque no enunciado dosage é primary key */
 insert into medication values ('med1','Lab-1','200 mg');
 insert into medication values ('med2','Lab-2','500 mg');
 insert into medication values ('med3','Lab-3','1 g');
