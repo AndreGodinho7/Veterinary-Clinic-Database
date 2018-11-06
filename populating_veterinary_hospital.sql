@@ -4,6 +4,7 @@ insert into person values (123456003, 'James'     , 'Flowers Avenue'   , 'San Fr
 insert into person values (123456011, 'Andrew'    , 'Roses Boulevard'  , 'Chicago'      , '1111-123');
 insert into person values (123456022, 'Peter'     , 'Central Boulevard', 'London'       , '1100-123');
 insert into person values (123456033, 'Ray'       , 'Second Boulevard' , 'San Francisco', '3300-123');
+insert into person values (123456044, 'Mike'      , 'Happy Boulevard'  , 'Chicago'      , '1111-123');
 insert into person values (123456004, 'John Smith', 'Central Avenue'   , 'Seattle'      , '2200-123');
 insert into person values (123456005, 'Jennifer'  , 'White Avenue'     , 'Chicago'      , '1111-124');
 insert into person values (123456006, 'Jessica'   , 'Chelsea Street'   , 'London'       , '1100-124');
@@ -27,6 +28,7 @@ insert into phone_number values (123456009, 962222229);
 insert into client values (123456001);
 insert into client values (123456002);
 insert into client values (123456003);
+insert into client values (123456004);
 insert into client values (123456011);
 insert into client values (123456022);
 insert into client values (123456033);
@@ -39,6 +41,10 @@ insert into assistant values (123456007);
 insert into assistant values (123456008);
 insert into assistant values (123456009);
 
+insert into species values ('bulldog', 'dog');
+insert into species values ('bird', 'abc');
+insert into species values ('cat' , 'abc');
+
 /* FALTA A GENERALIZATION SPECIES
 insert into generalization_species values();
 insert into generalization_species values();
@@ -46,16 +52,13 @@ insert into generalization_species values();
 insert into generalization_species values();
 insert into generalization_species values();
 */
-insert into species values ('dog' , 'abc');
-insert into species values ('bird', 'abc');
-insert into species values ('cat' , 'abc');
 
 insert into animal values ('Striker', 123456001, 'dog' , 'brown' , 'male'  , '2008-11-05', 10);
 insert into animal values ('Jackson', 123456002, 'dog' , 'black' , 'female', '2009-12-30', 9);
 insert into animal values ('Bob'    , 123456003, 'cat' , 'white' , 'male'  , '2017-01-04', 1);
 insert into animal values ('Thunder', 123456001, 'dog' , 'brown' , 'female', '2016-04-02', 2);
 insert into animal values ('Sparky' , 123456002, 'cat' , 'black' , 'female', '2014-10-10', 4);
-insert into animal values ('Max'    , 123456003, 'dog' , 'yellow', 'male'  , '2007-10-15', 11);
+insert into animal values ('Max'    , 123456033, 'dog' , 'yellow', 'male'  , '2007-10-15', 11);
 insert into animal values ('Cookie' , 123456011, 'bird', 'red'   , 'male'  , '2005-10-13', 13);
 insert into animal values ('Rolls'  , 123456022, 'bird', 'blue'  , 'male'  , '2017-05-01', 1);
 insert into animal values ('Jim'    , 123456033, 'bird', 'green' , 'female', '2010-02-05', 8);
@@ -66,7 +69,7 @@ insert into consult values ('Jackson', 123456002, '2018-02-01', 'Nausea, fever a
 insert into consult values ('Bob'    , 123456003, '2018-03-01', 'Nausea, fever and a black mark on the neck. Cancer', 'Black Mark.', 'Cirurgy'         , 'No sun light.'                             ,123456003, 123456004, 32);
 insert into consult values ('Thunder', 123456001, '2018-04-01', 'Overweight.'                                       , 'Obesity'    , 'Urine tests.'    , 'Lower caloric consumption and take pills.' ,123456001, 123456005, 17);
 insert into consult values ('Sparky' , 123456002, '2018-05-01', 'Overweight.'                                       , 'Obese'      , 'Urine tests.'    ,  'Lower caloric consumption and take pills.',123456002, 123456005, 15);
-insert into consult values ('Max'    , 123456003, '2018-06-01', 'Overweight.'                                       , 'Obesity'    , 'Urine tests.'    , 'Lower caloric consumption and take pills.' ,123456003, 123456005, 10);
+insert into consult values ('Max'    , 123456033, '2018-06-01', 'Overweight.'                                       , 'Obesity'    , 'Urine tests.'    , 'Lower caloric consumption and take pills.' ,123456003, 123456005, 10);
 insert into consult values ('Cookie' , 123456011, '2018-07-01', 'Dificulties on flying. Borken wing.'               , 'Blood analysis and radiography.', 'No touch.', 'Take pills.'                  ,123456011, 123456006, 1.38);
 insert into consult values ('Rolls'  , 123456022, '2018-08-01', 'Dificulties on flying. Borken wing.'               , 'Blood analysis and radiography.', 'No touch.', 'Take pills.'                  ,123456022, 123456006, 1.11);
 insert into consult values ('Jim'    , 123456033, '2018-09-01', 'Dificulties on flying. Borken wing.'               , 'Blood analysis and radiography.', 'No touch.', 'Take pills.'                  ,123456033, 123456006, 1.42);
@@ -77,48 +80,44 @@ insert into participation values ('Jackson', 123456002, '2018-02-01', 123456007)
 insert into participation values ('Bob'    , 123456003, '2018-03-01', 123456007);
 insert into participation values ('Thunder', 123456001, '2018-04-01', 123456008);
 insert into participation values ('Sparky' , 123456002, '2018-05-01', 123456008);
-insert into participation values ('Max'    , 123456003, '2018-06-01', 123456008);
+insert into participation values ('Max'    , 123456033, '2018-06-01', 123456008);
 insert into participation values ('Cookie' , 123456011, '2018-07-01', 123456009);
 insert into participation values ('Rolls'  , 123456022, '2018-08-01', 123456009);
 insert into participation values ('Jim'    , 123456033, '2018-09-01', 123456009);
 insert into participation values ('Cooper' , 123456011, '2018-10-01', 123456009);
 
-insert into diagnosis_code values ('AAHA-01', 'Striker');
-insert into diagnosis_code values ('AAHA-02', 'Jackson');
-insert into diagnosis_code values ('AAHA-03', 'Bob');
-insert into diagnosis_code values ('AAHA-04', 'Thunder');
-insert into diagnosis_code values ('AAHA-05', 'Sparky');
-insert into diagnosis_code values ('AAHA-06', 'Max');
-insert into diagnosis_code values ('AAHA-07', 'Cookie');
-insert into diagnosis_code values ('AAHA-08', 'Rolls');
-insert into diagnosis_code values ('AAHA-09', 'Jim');
-insert into diagnosis_code values ('AAHA-10', 'Cooper');
+insert into diagnosis_code values ('AAHA-01', 'Cancer');
+insert into diagnosis_code values ('AAHA-02', 'Overweight');
+insert into diagnosis_code values ('AAHA-03', 'Broken limb');
 
 insert into consult_diagnosis values ('AAHA-01', 'Striker', 123456001, '2018-01-01');
-insert into consult_diagnosis values ('AAHA-02', 'Jackson', 123456002, '2018-02-01');
-insert into consult_diagnosis values ('AAHA-03', 'Bob'    , 123456003, '2018-03-01');
-insert into consult_diagnosis values ('AAHA-04', 'Thunder', 123456001, '2018-04-01');
-insert into consult_diagnosis values ('AAHA-05', 'Sparky' , 123456002, '2018-05-01');
-insert into consult_diagnosis values ('AAHA-06', 'Max'    , 123456003, '2018-06-01');
-insert into consult_diagnosis values ('AAHA-07', 'Cookie' , 123456011, '2018-07-01');
-insert into consult_diagnosis values ('AAHA-08', 'Rolls'  , 123456022, '2018-08-01');
-insert into consult_diagnosis values ('AAHA-09', 'Jim'    , 123456033, '2018-09-01');
-insert into consult_diagnosis values ('AAHA-10', 'Cooper' , 123456011, '2018-10-01');
+insert into consult_diagnosis values ('AAHA-01', 'Jackson', 123456002, '2018-02-01');
+insert into consult_diagnosis values ('AAHA-02', 'Bob'    , 123456003, '2018-03-01');
+insert into consult_diagnosis values ('AAHA-02', 'Thunder', 123456001, '2018-04-01');
+insert into consult_diagnosis values ('AAHA-02', 'Sparky' , 123456002, '2018-05-01');
+insert into consult_diagnosis values ('AAHA-02', 'Max'    , 123456033, '2018-06-01');
+insert into consult_diagnosis values ('AAHA-02', 'Cookie' , 123456011, '2018-07-01');
+insert into consult_diagnosis values ('AAHA-03', 'Rolls'  , 123456022, '2018-08-01');
+insert into consult_diagnosis values ('AAHA-03', 'Jim'    , 123456033, '2018-09-01');
+insert into consult_diagnosis values ('AAHA-03', 'Cooper' , 123456011, '2018-10-01');
 
-insert into medication values ('med1', 'Lab-1', '200 mg');
-insert into medication values ('med2', 'Lab-2', '500 mg');
-insert into medication values ('med3', 'Lab-3', '1 g');
+insert into medication values ('med1'  , 'Lab-1'  , '200 mg');
+insert into medication values ('med11' , 'Lab-11' , '200 mg');
+insert into medication values ('med111', 'Lab-111', '200 mg');
+insert into medication values ('med2'  , 'Lab-2'  , '500 mg');
+insert into medication values ('med22' , 'Lab-22' , '1000 mg');
+insert into medication values ('med3'  , 'Lab-3'  , '1 g');
 
-insert into prescription values ('AAHA-01', 'Striker', 123456001, '2018-01-01', 'med1', 'Lab-1', '200 mg', '1 dose after dinnher. 24 hours between doses. 1 month of treatment. Take 200 mg');
-insert into prescription values ('AAHA-02', 'Jackson', 123456002, '2018-02-01', 'med1', 'Lab-1', '200 mg', '1 dose after dinnher. 24 hours between doses. 1 month of treatment. Take 200 mg');
-insert into prescription values ('AAHA-03', 'Bob'    , 123456003, '2018-03-01', 'med1', 'Lab-1', '200 mg', '1 dose after dinnher. 24 hours between doses. 1 month of treatment. Take 200 mg');
-insert into prescription values ('AAHA-04', 'Thunder', 123456001, '2018-04-01', 'med2', 'Lab-2', '500 mg', '1 dose after lunch. 24 hours between doses. 1 month of treatment. Take 300 mg.');
-insert into prescription values ('AAHA-05', 'Sparky' , 123456002, '2018-05-01', 'med2', 'Lab-2', '500 mg', '1 dose after lunch. 24 hours between doses. 1 month of treatment. Take 300 mg.');
-insert into prescription values ('AAHA-06', 'Max'    , 123456003, '2018-06-01', 'med2', 'Lab-2', '500 mg', '1 dose after lunch. 24 hours between doses. 1 month of treatment. Take 300 mg.');
-insert into prescription values ('AAHA-07', 'Cookie' , 123456011, '2018-07-01', 'med3', 'Lab-3', '1 g'   , '2 doses after dinner. 24 hours between doses. 1 month of treatment. Take 500 mg');
-insert into prescription values ('AAHA-08', 'Rolls'  , 123456022, '2018-08-01', 'med3', 'Lab-3', '1 g'   , '2 doses after dinner. 24 hours between doses. 1 month of treatment. Take 500 mg');
-insert into prescription values ('AAHA-09', 'Jim'    , 123456033, '2018-09-01', 'med3', 'Lab-3', '1 g'   , '2 doses after dinner. 24 hours between doses. 1 month of treatment. Take 500 mg');
-insert into prescription values ('AAHA-10', 'Cooper' , 123456011, '2018-10-01', 'med3', 'Lab-3', '1 g'   , '2 doses after dinner. 24 hours between doses. 1 month of treatment. Take 500 mg');
+insert into prescription values ('AAHA-01', 'Striker', 123456001, '2018-01-01', 'med1' , 'Lab-1' , '200 mg' , '1 dose after dinnher. 24 hours between doses. 1 month of treatment. Take 200 mg');
+insert into prescription values ('AAHA-01', 'Jackson', 123456002, '2018-02-01', 'med11', 'Lab-11', '200 mg' , '1 dose after dinnher. 24 hours between doses. 1 month of treatment. Take 200 mg');
+insert into prescription values ('AAHA-02', 'Bob'    , 123456003, '2018-03-01', 'med1' , 'Lab-1' , '200 mg' , '1 dose after dinnher. 24 hours between doses. 1 month of treatment. Take 200 mg');
+insert into prescription values ('AAHA-02', 'Thunder', 123456001, '2018-04-01', 'med1' , 'Lab-1' , '200 mg' , '1 dose after lunch. 24 hours between doses. 1 month of treatment. Take 300 mg.');
+insert into prescription values ('AAHA-02', 'Sparky' , 123456002, '2018-05-01', 'med2' , 'Lab-2' , '500 mg' , '1 dose after lunch. 24 hours between doses. 1 month of treatment. Take 300 mg.');
+insert into prescription values ('AAHA-02', 'Max'    , 123456033, '2018-06-01', 'med22', 'Lab-22', '1000 mg', '1 dose after lunch. 24 hours between doses. 1 month of treatment. Take 300 mg.');
+insert into prescription values ('AAHA-02', 'Cookie' , 123456011, '2018-07-01', 'med22', 'Lab-22', '1000 mg', '2 doses after dinner. 24 hours between doses. 1 month of treatment. Take 500 mg');
+insert into prescription values ('AAHA-03', 'Rolls'  , 123456022, '2018-08-01', 'med3' , 'Lab-3' , '1 g'    , '2 doses after dinner. 24 hours between doses. 1 month of treatment. Take 500 mg');
+insert into prescription values ('AAHA-03', 'Jim'    , 123456033, '2018-09-01', 'med3' , 'Lab-3' , '1 g'    , '2 doses after dinner. 24 hours between doses. 1 month of treatment. Take 500 mg');
+insert into prescription values ('AAHA-03', 'Cooper' , 123456011, '2018-10-01', 'med3' , 'Lab-3' , '1 g'    , '2 doses after dinner. 24 hours between doses. 1 month of treatment. Take 500 mg');
 
 insert into indicator values ('Nitrites'     , 100   , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
 insert into indicator values ('Neurotrophils', 300000, '% of the white blood cells present in the sample', 'This reference is the maximum for safety reasons.');
@@ -130,7 +129,7 @@ insert into procedures values ('Jackson', 123456002, '2018-02-01', 2, 'Cirurgy')
 insert into procedures values ('Bob'    , 123456003, '2018-03-01', 2, 'Cirurgy');
 insert into procedures values ('Thunder', 123456001, '2018-04-01', 1, 'Blood analysis');
 insert into procedures values ('Sparky' , 123456002, '2018-05-01', 1, 'Blood analysis');
-insert into procedures values ('Max'    , 123456003, '2018-06-01', 1, 'Blood analysis');
+insert into procedures values ('Max'    , 123456033, '2018-06-01', 1, 'Blood analysis');
 insert into procedures values ('Cookie' , 123456011, '2018-07-01', 2, 'Blood analysis and radiography');
 insert into procedures values ('Rolls'  , 123456022, '2018-08-01', 2, 'Blood analysis and radiography');
 insert into procedures values ('Jim'    , 123456033, '2018-09-01', 2, 'Blood analysis and radiography');
@@ -141,7 +140,7 @@ insert into performed values ('Jackson', 123456002, '2018-02-01', 2, 123456007);
 insert into performed values ('Bob'    , 123456003, '2018-03-01', 2, 123456007);
 insert into performed values ('Thunder', 123456001, '2018-04-01', 1, 123456008);
 insert into performed values ('Sparky' , 123456002, '2018-05-01', 1, 123456008);
-insert into performed values ('Max'    , 123456003, '2018-06-01', 1, 123456008);
+insert into performed values ('Max'    , 123456033, '2018-06-01', 1, 123456008);
 insert into performed values ('Cookie' , 123456011, '2018-07-01', 2, 123456009);
 insert into performed values ('Rolls'  , 123456022, '2018-08-01', 2, 123456009);
 insert into performed values ('Jim'    , 123456033, '2018-09-01', 2, 123456009);
@@ -154,7 +153,7 @@ insert into radiography values ('Cooper', 123456011, '2018-10-01', 2, 'INSERT PA
 
 insert into test_procedure values ('Thunder', 123456001, '2018-04-01', 1, 'Urine');
 insert into test_procedure values ('Sparky' , 123456002, '2018-05-01', 1, 'Urine');
-insert into test_procedure values ('Max'    , 123456003, '2018-06-01', 1, 'Urine');
+insert into test_procedure values ('Max'    , 123456033, '2018-06-01', 1, 'Urine');
 insert into test_procedure values ('Cookie' , 123456011, '2018-07-01', 2, 'Blood');
 insert into test_procedure values ('Rolls'  , 123456022, '2018-08-01', 2, 'Blood');
 insert into test_procedure values ('Jim'    , 123456033, '2018-09-01', 2, 'Blood');
@@ -162,7 +161,7 @@ insert into test_procedure values ('Cooper' , 123456011, '2018-10-01', 2, 'Blood
 
 insert into produced_indicator values ('Thunder', 123456001, '2018-04-01', 1, 'Nitrites'     , 30);
 insert into produced_indicator values ('Sparky' , 123456002, '2018-05-01', 1, 'Nitrites'     , 40);
-insert into produced_indicator values ('Max'    , 123456003, '2018-06-01', 1, 'Nitrites'     , 50);
+insert into produced_indicator values ('Max'    , 123456033, '2018-06-01', 1, 'Nitrites'     , 50);
 insert into produced_indicator values ('Cookie' , 123456011, '2018-07-01', 2, 'Monocytes'    , 100000);
 insert into produced_indicator values ('Rolls'  , 123456022, '2018-08-01', 2, 'Neurotrophils', 200000);
 insert into produced_indicator values ('Jim'    , 123456033, '2018-09-01', 2, 'Lymphocytes'  , 2500000);

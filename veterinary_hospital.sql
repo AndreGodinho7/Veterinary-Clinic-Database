@@ -24,7 +24,7 @@ create table person
 	 name varchar(255),
 	 address_street varchar(255),
 	 address_city varchar(255),
-	 adress_zip varchar(255),
+	 address_zip varchar(255),
 	 primary key (VAT));
 
 create table phone_number
