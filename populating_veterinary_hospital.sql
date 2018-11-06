@@ -4,6 +4,7 @@ insert into person values (123456003, 'James', 'Flowers Avenue','San Francisco',
 insert into person values (123456011, 'Andrew', 'Roses Boulevard', 'Chicago','1111-123');
 insert into person values (123456022, 'Peter', 'Central Boulevard', 'London','1100-123');
 insert into person values (123456033, 'Ray', 'Second Boulevard','San Francisco','3300-123');
+insert into person values (123456044, 'Mike',  'Happy Boulevard','Chicago','1111-123');
 insert into person values (123456004, 'John Smith', 'Central Avenue','Seattle','2200-123');
 insert into person values (123456005, 'Jennifer', 'White Avenue','Chicago','1111-124');
 insert into person values (123456006, 'Jessica',  'Chelsea Street','London','1100-124');
