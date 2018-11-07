@@ -9,8 +9,8 @@ insert into person values (123456004, 'John Smith', 'Central Avenue'   , 'Seattl
 insert into person values (123456005, 'Jennifer'  , 'White Avenue'     , 'Chicago'      , '1111-124');
 insert into person values (123456006, 'Jessica'   , 'Chelsea Street'   , 'London'       , '1100-124');
 insert into person values (123456007, 'Caroline'  , 'Central Street'   , 'Seattle'      , '2200-124');
-insert into person values (123456008, 'Bernard'   ,   'Central Street' , 'Seattle'      , '2200-125');
-insert into person values (123456009, 'Anne'      ,  'Happy Boulevard' , 'Chicago'      , '1111-125');
+insert into person values (123456008, 'Bernard'   , 'Central Street'   , 'Seattle'      , '2200-125');
+insert into person values (123456009, 'Anne'      , 'Happy Boulevard'  , 'Chicago'      , '1111-125');
 
 insert into phone_number values (123456001, 961231231);
 insert into phone_number values (123456002, 961231232);
@@ -126,18 +126,18 @@ insert into prescription values ('AAHA-02', 'Jim'    , 123456033, '2018-09-01', 
 insert into prescription values ('AAHA-03', 'Cooper' , 123456011, '2018-10-01', 'med3' , 'Lab-3' , '1 g'    , '2 doses after dinner. 24 hours between doses. 1 month of treatment. Take 500 mg');
 
 insert into indicator values ('Nitrites'     , 100   , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
-insert into indicator values ('Neurotrophils', 300000, '% of the white blood cells present in the sample', 'This reference is the maximum for safety reasons.');
+insert into indicator values ('Neurotrophils', 3000  , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
 insert into indicator values ('Lymphocytes'  , 300000, '% of the white blood cells present in the sample', 'This reference is the maximum for safety reasons.');
-insert into indicator values ('Monocytes'    , 400000, '% of the white blood cells present in the sample', 'This reference is the maximum for safety reasons.');
+insert into indicator values ('Monocytes'    , 4000  , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
 
-insert into indicator values ('aaaa'     , 50   , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
-insert into indicator values ('bbbb'     , 1000   , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
+insert into indicator values ('aaaa'     , 50  , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
+insert into indicator values ('bbbb'     , 1000, 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
 insert into indicator values ('cccc'     , 2   , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
-insert into indicator values ('dddd'     , 10   , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
-insert into indicator values ('eeee'     , 100   , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
-insert into indicator values ('ffff'     , 100   , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
-insert into indicator values ('gggg'     , 100   , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
-insert into indicator values ('hhhh'     , 100   , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
+insert into indicator values ('dddd'     , 10  , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
+insert into indicator values ('eeee'     , 100 , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
+insert into indicator values ('ffff'     , 100 , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
+insert into indicator values ('gggg'     , 100 , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
+insert into indicator values ('hhhh'     , 100 , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
 
 
 insert into procedures values ('Striker', 123456001, '2018-01-01', 2, 'Cirurgy');
