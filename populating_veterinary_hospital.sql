@@ -33,7 +33,7 @@ insert into client values (123456011);
 insert into client values (123456022);
 insert into client values (123456033);
 insert into client values (123456006);
-
+insert into client values (123456009);
 
 insert into veterinary values (123456004,'Oncologist' , 'John Smith is a 30 year old specialist in Oncology.'); 
 insert into veterinary values (123456005,'Nutrition'  , 'Jennifer is a 34 year old specialist in Nutrition.');
