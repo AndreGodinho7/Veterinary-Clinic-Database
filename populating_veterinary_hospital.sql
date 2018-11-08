@@ -76,17 +76,16 @@ insert into consult values ('Striker', 123456001, '2018-01-01', 'Nausea, fever a
 insert into consult values ('Jackson', 123456022, '2018-02-01', 'Nausea, fever and a black mark on the neck. Cancer', 'Black Mark.', 'Cirurgy'         , 'No sun light.'                             ,123456002, 123456004, 20);
 insert into consult values ('Bob'    , 123456003, '2018-03-01', 'Nausea, fever and a black mark on the neck. Cancer', 'Black Mark.', 'Cirurgy'         , 'No sun light.'                             ,123456003, 123456004, 32);
 insert into consult values ('Thunder', 123456001, '2018-04-01', 'Overweight.'                                       , 'Obesity'    , 'Urine tests.'    , 'Lower caloric consumption and take pills.' ,123456001, 123456005, 17);
-insert into consult values ('Sparky' , 123456002, '2018-05-01', 'Overweight.'                                       , 'Obese'      , 'Urine tests.'    ,  'Lower caloric consumption and take pills.',123456002, 123456005, 15);
-insert into consult values ('Sparky' , 123456002, '2018-06-01', 'Overweight.'                                       , 'Obese'      , 'Urine tests.'    ,  'Lower caloric consumption and take pills.',123456002, 123456005, 15);
-insert into consult values ('Max'    , 123456006, '2018-06-01', 'Overweight.'                                       , 'Obesity'    , 'Urine tests.'    , 'Lower caloric consumption and take pills.' ,123456003, 123456005, 10);
-insert into consult values ('Max'    , 123456006, '2018-06-08', 'Overweight.'                                       , 'Obesity'    , 'Urine tests.'    , 'Lower caloric consumption and take pills.' ,123456003, 123456005, 10);
-insert into consult values ('Max'    , 123456006, '2018-06-15', 'Overweight.'                                       , 'Obesity'    , 'Urine tests.'    , 'Lower caloric consumption and take pills.' ,123456003, 123456005, 10);
+insert into consult values ('Sparky' , 123456002, '2018-05-01', 'Overweight.'                                       , 'Obese'      , 'Urine tests.'    ,  'Lower caloric consumption and take pills.',123456002, 123456005, 25);
+insert into consult values ('Sparky' , 123456002, '2018-06-01', 'Overweight.'                                       , 'Obese'      , 'Urine tests.'    ,  'Lower caloric consumption and take pills.',123456002, 123456005, 35);
+insert into consult values ('Max'    , 123456006, '2018-06-01', 'Overweight.'                                       , 'Obesity'    , 'Urine tests.'    , 'Lower caloric consumption and take pills.' ,123456003, 123456005, 40);
+insert into consult values ('Max'    , 123456006, '2018-06-08', 'Overweight.'                                       , 'Obesity'    , 'Urine tests.'    , 'Lower caloric consumption and take pills.' ,123456003, 123456005, 35);
+insert into consult values ('Max'    , 123456006, '2018-06-15', 'Overweight.'                                       , 'Obesity'    , 'Urine tests.'    , 'Lower caloric consumption and take pills.' ,123456003, 123456005, 25);
 insert into consult values ('Cookie' , 123456011, '2018-07-01', 'Dificulties on flying. Borken wing.'               , 'Blood analysis and radiography.', 'No touch.', 'Take pills.'                  ,123456011, 123456006, 1.38);
 insert into consult values ('Rolls'  , 123456022, '2018-08-01', 'Dificulties on flying. Borken wing.'               , 'Blood analysis and radiography.', 'No touch.', 'Take pills.'                  ,123456022, 123456006, 1.11);
 insert into consult values ('Jim'    , 123456033, '2018-09-01', 'Dificulties on flying. Borken wing.'               , 'Blood analysis and radiography.', 'No touch.', 'Take pills.'                  ,123456033, 123456006, 1.42);
 insert into consult values ('Cooper' , 123456011, '2018-10-01', 'Dificulties on flying. Borken wing.'               , 'Blood analysis and radiography.', 'No touch.', 'No take pills.'                  ,123456011, 123456006, 1.52);
 insert into consult values ('Cooper' , 123456011, '2018-10-08', 'Dificulties on flying. Borken wing.'               , 'Blood analysis and radiography.', 'No touch.', 'No take pills.'                  ,123456011, 123456006, 1.52);
-
 
 insert into participation values ('Striker', 123456001, '2018-01-01', 123456007);
 insert into participation values ('Jackson', 123456022, '2018-02-01', 123456007);
