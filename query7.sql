@@ -1,115 +1,22 @@
-select a.species_name as specific_species_name, dc.name
-from diagnosis_code dc, consult_diagnosis cd, consult c, animal a, species s, generalization_species gs
-where dc.code = cd.code
-and cd.name = c.name
-and c.name = a.name
-and a.species_name = s.name 
-and a.species_name = gs.name1
-and gs.name2 like '%dog%'
-group by a.species_name, dc.code
-having count(*) >= all(select count(*)
-					   from diagnosis_code dc, consult_diagnosis cd, consult c, animal a, species s, generalization_species gs
-					   where dc.code = cd.code
-					   and cd.name = c.name
-					   and c.name = a.name
-					   and s.name = specific_species_name
-					   and gs.name1 = specific_species_name
-					   and gs.name2 like '%dog%'
-					   group by specific_species_name, dc.code);
-
-
-select a.species_name, dc.name, count(*)
-from diagnosis_code dc, consult_diagnosis cd, consult c, animal a, species s, generalization_species gs
-where dc.code = cd.code
-and cd.name = c.name
-and c.name = a.name
-and a.species_name = s.name 
-and a.species_name = gs.name1
-and gs.name2 like '%dog%'
-group by a.species_name, dc.code
-having count(*) >= 1;
-
----------------
-
 select a.species_name, dc.name
-from diagnosis_code dc, consult_diagnosis cd, consult c, animal a, species s, generalization_species gs
-where dc.code = cd.code
-and cd.name = c.name
-and c.name = a.name
-and a.species_name = s.name 
-and a.species_name = gs.name1
-and gs.name2 like '%dog%'
-group by a.species_name, dc.code
+from ((((diagnosis_code as dc inner join 
+	consult_diagnosis as cd on (dc.code = cd.code)) inner join 
+	animal as a on (cd.name = a.name and cd.VAT_owner = a.VAT)) inner join 
+	species as s on (a.species_name = s.name)) inner join 
+	generalization_species gs on (s.name = gs.name1))
+where gs.name2 = 'dog'
+group by a.species_name, dc.name
 having count(*) >= all(select count(*)
-					   from diagnosis_code dc, consult_diagnosis cd, consult c, animal a, species s, generalization_species gs
-					   where dc.code = cd.code
-					   and cd.name = c.name
-					   and c.name = a.name
-					   and a.species_name = s.name 
-					   and a.species_name = gs.name1
-					   and gs.name2 like '%dog%'
-					   and a.species_name in(select a.species_name
-											 from diagnosis_code dc, consult_diagnosis cd, consult c, animal a, species s, generalization_species gs
-											 where dc.code = cd.code
-											 and cd.name = c.name
-											 and c.name = a.name
-											 and a.species_name = s.name 
-											 and a.species_name = gs.name1
-											 and gs.name2 like '%dog%'
-											 group by species_name)
-					   group by a.species_name, dc.code);
-
----------------
-
-select a.species_name, dc.name, count(*)
-from diagnosis_code dc, consult_diagnosis cd, consult c, animal as a, species s, generalization_species gs
-where dc.code = cd.code
-and cd.name = c.name
-and c.name = a.name
-and a.species_name = s.name 
-and a.species_name = gs.name1
-and gs.name2 like '%dog%'
-group by a.species_name, dc.code
+					   from ((((diagnosis_code as dc1 inner join 
+					   			consult_diagnosis as cd1 on (dc1.code = cd1.code)) inner join 
+					   			animal as a1 on (cd1.name = a1.name and cd1.VAT_owner = a1.VAT)) inner join 
+					   			species as s1 on (a1.species_name = s1.name)) inner join 
+					   			generalization_species as gs1 on (s1.name = gs1.name1)) 
+					   where a.species_name = a1.species_name
+					   group by dc1.name);
 
 
-
-
-
-
-
-
-
-
-
-
-
-select a.species_name
-from diagnosis_code dc, consult_diagnosis cd, consult c, animal a, species s, generalization_species gs
-where dc.code = cd.code
-and cd.name = c.name
-and c.name = a.name
-and a.species_name = s.name 
-and a.species_name = gs.name1
-and gs.name2 like '%dog%'
-group by species_name;
-
-
-
-
-
-
-
-
-
-
-
-select a.species_name as specific_species_name, dc.name
-from (((diagnosis_code dc natural join consult_diagnosis cd) natural join consult) inner join animal a), species s, generalization_species gs
-where a.species_name = s.name 
-and a.species_name = gs.name1
-and gs.name2 like '%dog%'
-group by a.species_name, dc.code
-having count(*) >= 1;
+/*PÔR MAIS FUNCIONAL*/
 
 select *
-from ((consult_diagnosis cd inner join diagnosis_code dc on (cd.code = dc.code)) inner join consult c on (cd.name = c.name)) natural join animal a;
+from (consult_diagnosis natural join animal) inner join species on (a.species_name = s.name)) inner join
