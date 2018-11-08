@@ -76,6 +76,7 @@ insert into consult values ('Jackson', 123456022, '2018-02-01', 'Nausea, fever a
 insert into consult values ('Bob'    , 123456003, '2018-03-01', 'Nausea, fever and a black mark on the neck. Cancer', 'Black Mark.', 'Cirurgy'         , 'No sun light.'                             ,123456003, 123456004, 32);
 insert into consult values ('Thunder', 123456001, '2018-04-01', 'Overweight.'                                       , 'Obesity'    , 'Urine tests.'    , 'Lower caloric consumption and take pills.' ,123456001, 123456005, 17);
 insert into consult values ('Sparky' , 123456002, '2018-05-01', 'Overweight.'                                       , 'Obese'      , 'Urine tests.'    ,  'Lower caloric consumption and take pills.',123456002, 123456005, 15);
+insert into consult values ('Sparky' , 123456002, '2018-06-01', 'Overweight.'                                       , 'Obese'      , 'Urine tests.'    ,  'Lower caloric consumption and take pills.',123456002, 123456005, 15);
 insert into consult values ('Max'    , 123456006, '2018-06-01', 'Overweight.'                                       , 'Obesity'    , 'Urine tests.'    , 'Lower caloric consumption and take pills.' ,123456003, 123456005, 10);
 insert into consult values ('Max'    , 123456006, '2018-06-08', 'Overweight.'                                       , 'Obesity'    , 'Urine tests.'    , 'Lower caloric consumption and take pills.' ,123456003, 123456005, 10);
 insert into consult values ('Max'    , 123456006, '2018-06-15', 'Overweight.'                                       , 'Obesity'    , 'Urine tests.'    , 'Lower caloric consumption and take pills.' ,123456003, 123456005, 10);
@@ -89,6 +90,7 @@ insert into participation values ('Jackson', 123456022, '2018-02-01', 123456007)
 insert into participation values ('Bob'    , 123456003, '2018-03-01', 123456007);
 insert into participation values ('Thunder', 123456001, '2018-04-01', 123456008);
 insert into participation values ('Sparky' , 123456002, '2018-05-01', 123456008);
+insert into participation values ('Sparky' , 123456002, '2018-06-01', 123456008);
 insert into participation values ('Max'    , 123456006, '2018-06-01', 123456008);
 insert into participation values ('Max'    , 123456006, '2018-06-08', 123456008);
 insert into participation values ('Max'    , 123456006, '2018-06-15', 123456008);
@@ -106,6 +108,7 @@ insert into consult_diagnosis values ('AAHA-01', 'Jackson', 123456022, '2018-02-
 insert into consult_diagnosis values ('AAHA-02', 'Bob'    , 123456003, '2018-03-01');
 insert into consult_diagnosis values ('AAHA-02', 'Thunder', 123456001, '2018-04-01');
 insert into consult_diagnosis values ('AAHA-02', 'Sparky' , 123456002, '2018-05-01');
+insert into consult_diagnosis values ('AAHA-02', 'Sparky' , 123456002, '2018-06-01');
 insert into consult_diagnosis values ('AAHA-03', 'Max'    , 123456006, '2018-06-01');
 insert into consult_diagnosis values ('AAHA-03', 'Max'    , 123456006, '2018-06-08');
 insert into consult_diagnosis values ('AAHA-03', 'Max'    , 123456006, '2018-06-15');
