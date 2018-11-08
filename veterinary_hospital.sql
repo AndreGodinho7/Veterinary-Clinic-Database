@@ -31,24 +31,24 @@ create table phone_number
 	(VAT integer,
 	 phone integer,
 	 primary key (VAT, phone),
-	 foreign key (VAT) references person(VAT) on delete cascade);
+	 foreign key (VAT) references person(VAT));
 
 create table client
 	(VAT integer,
 	 primary key (VAT),
-	 foreign key (VAT) references person(VAT) on delete cascade);
+	 foreign key (VAT) references person(VAT));
 
 create table veterinary 
 	(VAT integer,
 	 specialization varchar(255),
 	 bio varchar(255),
 	 primary key (VAT),
-	 foreign key (VAT) references person(VAT) on delete cascade);
+	 foreign key (VAT) references person(VAT));
 
 create table assistant
 	(VAT integer,
 	 primary key(VAT),
-	 foreign key(VAT) references person(VAT) on delete cascade);
+	 foreign key(VAT) references person(VAT));
 
 create table species
 	(name varchar(255),
@@ -88,7 +88,7 @@ create table consult
 	 primary key(name, VAT_owner, date_timestamp),
 	 foreign key(name, VAT_owner) references animal(name, VAT) on delete cascade,
 	 foreign key(VAT_client) references client(VAT) on delete cascade,
-	 foreign key(VAT_vet) references veterinary(VAT) on delete cascade,
+	 foreign key(VAT_vet) references veterinary(VAT),
 	 check(weight >= 0));
 
 create table participation
@@ -98,7 +98,7 @@ create table participation
 	 VAT_assistant integer,
 	 primary key(name, VAT_owner, date_timestamp, VAT_assistant),
 	 foreign key(name, VAT_owner, date_timestamp) references consult(name, VAT_owner, date_timestamp) on delete cascade,
-	 foreign key(VAT_assistant) references assistant(VAT) on delete cascade);
+	 foreign key(VAT_assistant) references assistant(VAT));
 
 create table diagnosis_code
 	(code varchar(255),
@@ -157,7 +157,7 @@ create table performed
 	 VAT_assistant integer,
 	 primary key(name, VAT_owner, date_timestamp, num),
 	 foreign key(name, VAT_owner, date_timestamp, num) references procedures(name, VAT_owner, date_timestamp, num) on delete cascade,
-	 foreign key(VAT_assistant) references assistant(VAT) on delete cascade);
+	 foreign key(VAT_assistant) references assistant(VAT));
 
 create table radiography
 	(name varchar(255),
