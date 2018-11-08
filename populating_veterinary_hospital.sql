@@ -95,6 +95,7 @@ insert into participation values ('Cooper' , 123456011, '2018-10-01', 123456009)
 insert into diagnosis_code values ('AAHA-01', 'Cancer');
 insert into diagnosis_code values ('AAHA-02', 'Overweight');
 insert into diagnosis_code values ('AAHA-03', 'Broken limb');
+insert into diagnosis_code values ('AAHA-04', 'kidney failure');
 
 insert into consult_diagnosis values ('AAHA-01', 'Striker', 123456001, '2018-01-01');
 insert into consult_diagnosis values ('AAHA-01', 'Jackson', 123456022, '2018-02-01');
@@ -104,7 +105,7 @@ insert into consult_diagnosis values ('AAHA-02', 'Sparky' , 123456002, '2018-05-
 insert into consult_diagnosis values ('AAHA-03', 'Max'    , 123456006, '2018-06-01');
 insert into consult_diagnosis values ('AAHA-02', 'Cookie' , 123456011, '2018-07-01');
 insert into consult_diagnosis values ('AAHA-03', 'Rolls'  , 123456022, '2018-08-01');
-insert into consult_diagnosis values ('AAHA-02', 'Jim'    , 123456033, '2018-09-01');
+insert into consult_diagnosis values ('AAHA-04', 'Jim'    , 123456033, '2018-09-01');
 insert into consult_diagnosis values ('AAHA-03', 'Cooper' , 123456011, '2018-10-01');
 
 insert into medication values ('med1'  , 'Lab-1'  , '200 mg');
@@ -180,5 +181,5 @@ insert into produced_indicator values ('Sparky' , 123456002, '2018-05-01', 1, 'N
 insert into produced_indicator values ('Max'    , 123456006, '2018-06-01', 1, 'Nitrites'     , 50);
 insert into produced_indicator values ('Cookie' , 123456011, '2018-07-01', 2, 'Monocytes'    , 100000);
 insert into produced_indicator values ('Rolls'  , 123456022, '2018-08-01', 2, 'Neurotrophils', 200000);
-insert into produced_indicator values ('Jim'    , 123456033, '2018-09-01', 2, 'Lymphocytes'  , 2500000);
+insert into produced_indicator values ('Jim'    , 123456033, '2018-09-01', 2, 'creatine level'  , 2500000);
 insert into produced_indicator values ('Cooper' , 123456011, '2018-10-01', 2, 'Lymphocytes'  , 50000);
