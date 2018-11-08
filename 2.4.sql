@@ -1,8 +1,11 @@
-select code from diagnosis_code where name = 'kidney failure';
+#select code from diagnosis_code where name = 'kidney failure';
 
 insert into diagnosis_code values ('AAHA-15', 'end-stage renal disease');
 
-update consult_diagnosis natural join consult natural join procedures natural join test_procedure natural join produced_indicator
-set code = 'AAHA-15'
+update 
+consult_diagnosis cd  natural join consult natural join procedures natural join test_procedure natural join produced_indicator, diagnosis_code dc
+set cd.code = dc.code
 where 
-value > 1.0 and indicator_name = 'creatine level' and type = 'Blood' and code = 'AAHA-04';
+cd.code in (select code from diagnosis_code where name = 'kidney failure') and
+dc.name = 'end-stage renal disease' and 
+type = 'Blood' and indicator_name = 'creatine level' and value > 1.0;

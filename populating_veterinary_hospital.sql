@@ -86,7 +86,7 @@ insert into consult values ('Rolls'  , 123456022, '2018-08-01', 'Dificulties on 
 insert into consult values ('Jim'    , 123456033, '2018-09-01', 'Dificulties on flying. Borken wing.'               , 'Blood analysis and radiography.', 'No touch.', 'Take pills.'                  ,123456033, 123456006, 1.42);
 insert into consult values ('Cooper' , 123456011, '2018-10-01', 'Dificulties on flying. Borken wing.'               , 'Blood analysis and radiography.', 'No touch.', 'No take pills.'                  ,123456011, 123456006, 1.52);
 insert into consult values ('Cooper' , 123456011, '2018-10-08', 'Dificulties on flying. Borken wing.'               , 'Blood analysis and radiography.', 'No touch.', 'No take pills.'                  ,123456011, 123456006, 1.52);
-
+insert into consult values ('Cooper' , 123456011, '2018-10-09', 'Dificulties on flying. Borken wing.'               , 'Blood analysis', 				 'No touch.', 'No take pills.'                  ,123456011, 123456006, 1.52);
 
 insert into participation values ('Striker', 123456001, '2018-01-01', 123456007);
 insert into participation values ('Jackson', 123456022, '2018-02-01', 123456007);
@@ -122,6 +122,7 @@ insert into consult_diagnosis values ('AAHA-03', 'Rolls'  , 123456022, '2018-08-
 insert into consult_diagnosis values ('AAHA-02', 'Jim'    , 123456033, '2018-09-01');
 insert into consult_diagnosis values ('AAHA-04', 'Cooper' , 123456011, '2018-10-01');
 insert into consult_diagnosis values ('AAHA-04', 'Cooper' , 123456011, '2018-10-08');
+insert into consult_diagnosis values ('AAHA-04', 'Cooper' , 123456011, '2018-10-09');
 
 insert into medication values ('med1'  , 'Lab-1'  , '200 mg');
 insert into medication values ('med1'  , 'Lab-1'  , '300 mg');
@@ -175,6 +176,7 @@ insert into procedures values ('Cookie' , 123456011, '2018-07-01', 1, 'Blood ana
 insert into procedures values ('Rolls'  , 123456022, '2018-08-01', 1, 'Blood analysis and radiography');
 insert into procedures values ('Jim'    , 123456033, '2018-09-01', 1, 'Blood analysis and radiography');
 insert into procedures values ('Cooper' , 123456011, '2018-10-01', 1, 'Blood analysis and radiography');
+insert into procedures values ('Cooper' , 123456011, '2018-10-09', 1, 'Blood analysis');
 
 insert into performed values ('Striker', 123456001, '2018-01-01', 1, 123456007);
 insert into performed values ('Jackson', 123456022, '2018-02-01', 1, 123456007);
@@ -207,6 +209,7 @@ insert into test_procedure values ('Cookie' , 123456011, '2018-07-01', 1, 'Blood
 insert into test_procedure values ('Rolls'  , 123456022, '2018-08-01', 1, 'Blood');
 insert into test_procedure values ('Jim'    , 123456033, '2018-09-01', 1, 'Blood');
 insert into test_procedure values ('Cooper' , 123456011, '2018-10-01', 1, 'Blood');
+insert into test_procedure values ('Cooper' , 123456011, '2018-10-09', 1, 'Blood');
 
 insert into produced_indicator values ('Thunder', 123456001, '2018-04-01', 1, 'Nitrites'     , 30);
 insert into produced_indicator values ('Max'    , 123456006, '2018-06-01', 1, 'Nitrites'     , 50);
@@ -219,3 +222,4 @@ insert into produced_indicator values ('Cookie' , 123456011, '2018-07-01', 1, 'M
 insert into produced_indicator values ('Rolls'  , 123456022, '2018-08-01', 1, 'Neurotrophils', 200000);
 insert into produced_indicator values ('Jim'    , 123456033, '2018-09-01', 1, 'Lymphocytes'  , 2500000);
 insert into produced_indicator values ('Cooper' , 123456011, '2018-10-01', 1, 'Lymphocytes'  , 50000);
+insert into produced_indicator values ('Cooper' , 123456011, '2018-10-01', 1, 'creatine level'  , 5);
