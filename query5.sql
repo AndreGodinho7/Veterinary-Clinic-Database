@@ -1,4 +1,4 @@
-select code as possible_diagnosis, count(distinct name_med) as number_of_distinct_medication_name
-from prescription
-group by code
-order by count(distinct name_med);
+SELECT code AS possible_diagnosis, COUNT(DISTINCT name_med) AS number_of_distinct_medication_name
+FROM prescription
+GROUP BY code
+ORDER BY COUNT(distinct name_med);
