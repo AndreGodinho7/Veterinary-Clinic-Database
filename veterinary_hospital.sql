@@ -31,24 +31,24 @@ create table phone_number
 	(VAT integer,
 	 phone integer,
 	 primary key (VAT, phone),
-	 foreign key (VAT) references person(VAT));
+	 foreign key (VAT) references person(VAT) on delete cascade);
 
 create table client
 	(VAT integer,
 	 primary key (VAT),
-	 foreign key (VAT) references person(VAT));
+	 foreign key (VAT) references person(VAT) on delete cascade);
 
 create table veterinary 
 	(VAT integer,
 	 specialization varchar(255),
 	 bio varchar(255),
 	 primary key (VAT),
-	 foreign key (VAT) references person(VAT));
+	 foreign key (VAT) references person(VAT) on delete cascade);
 
 create table assistant
 	(VAT integer,
 	 primary key(VAT),
-	 foreign key(VAT) references person(VAT));
+	 foreign key(VAT) references person(VAT) on delete cascade);
 
 create table species
 	(name varchar(255),
@@ -71,7 +71,7 @@ create table animal
 	 birth_year timestamp,
 	 age integer,
 	 primary key(name, VAT),
-	 foreign key(VAT) references client(VAT),
+	 foreign key(VAT) references client(VAT) on delete cascade,
 	 foreign key(species_name) references species(name));
 
 create table consult
@@ -86,9 +86,9 @@ create table consult
 	 VAT_vet integer,
 	 weight numeric(20,2),
 	 primary key(name, VAT_owner, date_timestamp),
-	 foreign key(name, VAT_owner) references animal(name, VAT),
-	 foreign key(VAT_client) references client(VAT),
-	 foreign key(VAT_vet) references veterinary(VAT),
+	 foreign key(name, VAT_owner) references animal(name, VAT) on delete cascade,
+	 foreign key(VAT_client) references client(VAT) on delete cascade,
+	 foreign key(VAT_vet) references veterinary(VAT) on delete cascade,
 	 check(weight >= 0));
 
 create table participation
@@ -97,8 +97,8 @@ create table participation
 	 date_timestamp timestamp,
 	 VAT_assistant integer,
 	 primary key(name, VAT_owner, date_timestamp, VAT_assistant),
-	 foreign key(name, VAT_owner, date_timestamp) references consult(name, VAT_owner, date_timestamp),
-	 foreign key(VAT_assistant) references assistant(VAT));
+	 foreign key(name, VAT_owner, date_timestamp) references consult(name, VAT_owner, date_timestamp) on delete cascade,
+	 foreign key(VAT_assistant) references assistant(VAT) on delete cascade);
 
 create table diagnosis_code
 	(code varchar(255),
@@ -111,7 +111,7 @@ create table consult_diagnosis
 	 VAT_owner integer,
 	 date_timestamp timestamp,
 	 primary key(code, name, VAT_owner, date_timestamp),
-	 foreign key(name, VAT_owner, date_timestamp) references consult(name, VAT_owner, date_timestamp),
+	 foreign key(name, VAT_owner, date_timestamp) references consult(name, VAT_owner, date_timestamp) on delete cascade,
 	 foreign key(code) references diagnosis_code(code));
 
 create table medication
@@ -130,7 +130,7 @@ create table prescription
 	 dosage varchar(255),
 	 regime varchar(255),
 	 primary key(code, name, VAT_owner, date_timestamp, name_med, lab, dosage),
-	 foreign key(code, name, VAT_owner, date_timestamp) references consult_diagnosis(code, name, VAT_owner, date_timestamp),
+	 foreign key(code, name, VAT_owner, date_timestamp) references consult_diagnosis(code, name, VAT_owner, date_timestamp) on delete cascade,
 	 foreign key(name_med, lab, dosage) references medication(name, lab, dosage));
 
 create table indicator
@@ -147,7 +147,7 @@ create table procedures
 	 num integer,
 	 description varchar(255),
 	 primary key(name, VAT_owner, date_timestamp, num),
-	 foreign key(name, VAT_owner, date_timestamp) references consult(name, VAT_owner, date_timestamp));
+	 foreign key(name, VAT_owner, date_timestamp) references consult(name, VAT_owner, date_timestamp) on delete cascade);
 
 create table performed
 	(name varchar(255),
@@ -156,8 +156,8 @@ create table performed
 	 num integer,
 	 VAT_assistant integer,
 	 primary key(name, VAT_owner, date_timestamp, num),
-	 foreign key(name, VAT_owner, date_timestamp, num) references procedures(name, VAT_owner, date_timestamp, num),
-	 foreign key(VAT_assistant) references assistant(VAT));
+	 foreign key(name, VAT_owner, date_timestamp, num) references procedures(name, VAT_owner, date_timestamp, num) on delete cascade,
+	 foreign key(VAT_assistant) references assistant(VAT) on delete cascade);
 
 create table radiography
 	(name varchar(255),
@@ -166,7 +166,7 @@ create table radiography
 	 num integer,
 	 file varchar(255),
 	 primary key(name, VAT_owner, date_timestamp, num),
-	 foreign key(name, VAT_owner, date_timestamp, num) references procedures(name, VAT_owner, date_timestamp, num));
+	 foreign key(name, VAT_owner, date_timestamp, num) references procedures(name, VAT_owner, date_timestamp, num) on delete cascade);
 
 create table test_procedure
 	(name varchar(255),
@@ -175,7 +175,7 @@ create table test_procedure
 	 num integer,
 	 type char(5),
 	 primary key(name, VAT_owner, date_timestamp, num),
-	 foreign key(name, VAT_owner, date_timestamp, num) references procedures(name, VAT_owner, date_timestamp, num),
+	 foreign key(name, VAT_owner, date_timestamp, num) references procedures(name, VAT_owner, date_timestamp, num) on delete cascade,
 	 check(num >= 1));
 
 create table produced_indicator
@@ -186,5 +186,5 @@ create table produced_indicator
 	 indicator_name varchar(255),
 	 value numeric(20,2),
 	 primary key(name, VAT_owner, date_timestamp, num, indicator_name),
-	 foreign key(name, VAT_owner, date_timestamp, num) references test_procedure(name, VAT_owner, date_timestamp, num),
+	 foreign key(name, VAT_owner, date_timestamp, num) references test_procedure(name, VAT_owner, date_timestamp, num) on delete cascade,
 	 foreign key(indicator_name) references indicator(name));

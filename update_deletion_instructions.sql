@@ -13,4 +13,9 @@ and units = 'miligrams';
 
 /********************** 3rd SQL INSTRUCTION **********************/
 
+delete from person
+where name = 'John Smith';
+
 /********************** 4th SQL INSTRUCTION **********************/
+
+
