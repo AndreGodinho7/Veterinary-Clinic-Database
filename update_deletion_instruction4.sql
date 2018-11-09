@@ -1,5 +1,3 @@
-#select code from diagnosis_code where name = 'kidney failure';
-
 INSERT INTO diagnosis_code VALUES ('AAHA-15', 'end-stage renal disease');
 
 UPDATE
