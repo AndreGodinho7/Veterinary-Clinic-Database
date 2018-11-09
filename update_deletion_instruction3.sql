@@ -1,6 +1,4 @@
-delete client
-	from client
-inner 
-	join person
-		on person.VAT = client.VAT
-	where name = 'John Smith';
+DELETE client 
+FROM client 
+INNER JOIN person ON person.VAT = client.VAT
+WHERE name = 'John Smith';
