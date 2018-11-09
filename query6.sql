@@ -8,5 +8,3 @@ consult c NATURAL LEFT OUTER JOIN participation pa NATURAL LEFT OUTER JOIN proce
 NATURAL LEFT OUTER JOIN consult_diagnosis cd NATURAL LEFT OUTER JOIN prescription pres
 WHERE
 year(c.date_timestamp) = 2017;
-
-
