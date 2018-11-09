@@ -1,3 +1,4 @@
 SELECT *
-FROM person natural join client
-WHERE vat not in (SELECT vat FROM animal)
+FROM person NATURAL JOIN client
+WHERE vat NOT IN (SELECT vat 
+                  FROM animal)
