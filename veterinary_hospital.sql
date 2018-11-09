@@ -136,7 +136,7 @@ create table prescription
 	 regime varchar(255),
 	 primary key(code, name, VAT_owner, date_timestamp, name_med, lab, dosage),
 	 foreign key(code, name, VAT_owner, date_timestamp) references consult_diagnosis(code, name, VAT_owner, date_timestamp) 
-	 	on delete cascade,
+	 	on delete cascade on update cascade,
 	 foreign key(name_med, lab, dosage) references medication(name, lab, dosage));
 
 create table indicator
