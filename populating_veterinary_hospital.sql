@@ -147,7 +147,7 @@ insert into prescription values ('AAHA-02', 'Jim'    , 123456033, '2017-09-01', 
 
 insert into indicator values ('Nitrites'      , 100   , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
 insert into indicator values ('Neurotrophils' , 3000  , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
-insert into indicator values ('Lymphocytes'   , 300000, '% of the white blood cells present in the sample', 'This reference is the maximum for safety reasons.');
+insert into indicator values ('Lymphocytes'   , 300000, 'percentage'									  ,'This reference is the maximum for safety reasons.');
 insert into indicator values ('Monocytes'     , 4000  , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
 insert into indicator values ('creatine level', 200   , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
 insert into indicator values ('VO2 maximum'     , 50   , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
