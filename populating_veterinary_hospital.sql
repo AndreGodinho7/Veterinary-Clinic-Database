@@ -147,18 +147,14 @@ insert into prescription values ('AAHA-02', 'Jim'    , 123456033, '2017-09-01', 
 
 insert into indicator values ('Nitrites'      , 100   , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
 insert into indicator values ('Neurotrophils' , 3000  , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
-insert into indicator values ('Lymphocytes'   , 300000, '% of the white blood cells present in the sample', 'This reference is the maximum for safety reasons.');
+insert into indicator values ('Lymphocytes'   , 300000, 'percentage'									  ,'This reference is the maximum for safety reasons.');
 insert into indicator values ('Monocytes'     , 4000  , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
 insert into indicator values ('creatine level', 200   , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
-
-insert into indicator values ('aaaa'     , 50   , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
-insert into indicator values ('bbbb'     , 1000   , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
-insert into indicator values ('cccc'     , 2   , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
-insert into indicator values ('dddd'     , 10   , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
-insert into indicator values ('eeee'     , 100   , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
-insert into indicator values ('ffff'     , 100   , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
-insert into indicator values ('gggg'     , 100   , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
-insert into indicator values ('hhhh'     , 100   , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
+insert into indicator values ('VO2 maximum'     , 50   , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
+insert into indicator values ('Ferritin'     , 1000   , 'miligrams'                                       , 'This reference is the maximum for safety reasons.');
+insert into indicator values ('Oxygen concentration'  , 2   , 'percentage'                                       , 'This reference is the maximum for safety reasons.');
+insert into indicator values ('Heartbeats'     , 10   , 'Bpm'                                       , 'This reference is the maximum for safety reasons.');
+insert into indicator values ('Body fats'     , 100   , 'kilograms'                                       , 'This reference is the maximum for safety reasons.');
 
 insert into procedures values ('Striker', 123456001, '2018-01-01', 1, 'Cirurgy');
 insert into procedures values ('Jackson', 123456022, '2017-02-01', 1, 'Cirurgy');
